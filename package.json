@@ -4,18 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "release": "release-it",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsx src/test.ts"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob": "^11.0.0"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.5.3"
+  "dependencies": {},
+  "peerDependencies": {
+    "pdfkit": "^0.15.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@types/pdfkit": "^0.13.4",
-    "pdfkit": "^0.15.0"
+    "typescript": "^5.5.3",
+    "release-it": "^17.6.0",
+    "glob": "^11",
+    "tsx": "^4.16.2"
   }
 }
