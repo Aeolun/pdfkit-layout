@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "skipLibCheck": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "declaration": true
   },
   "exclude": ["**/*.test.ts", "**/*.spec.ts", "node_modules"]
 }
