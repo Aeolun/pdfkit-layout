@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "node_modules"]
 }

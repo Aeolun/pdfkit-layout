@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@types/pdfkit": "^0.13.4",
-    "pdfkit": "^0.15.0"
+    "@vitest/ui": "^4.0.15",
+    "pdfkit": "^0.15.0",
+    "vitest": "^4.0.15"
   }
 }
