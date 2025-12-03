@@ -113,14 +113,15 @@ export class Box implements LayoutNode {
             currentPage.height -
             currentPage.margins.top -
             currentPage.margins.bottom,
-          padding: 0,
         };
 
+    const padding = ("padding" in baseSize ? baseSize.padding : 0) as number;
+
     return {
-      x: baseSize.x + baseSize.width * this.x + baseSize.padding,
-      y: baseSize.y + baseSize.height * this.y + baseSize.padding,
-      width: baseSize.width * this.width - baseSize.padding * 2,
-      height: baseSize.height * this.height - baseSize.padding * 2,
+      x: baseSize.x + baseSize.width * this.x + padding,
+      y: baseSize.y + baseSize.height * this.y + padding,
+      width: baseSize.width * this.width - padding * 2,
+      height: baseSize.height * this.height - padding * 2,
       padding: this.padding,
     };
   }
@@ -220,7 +221,7 @@ export const layout = (doc: PDFKit.PDFDocument, node: ValidShape) => {
   }
 
   for (const child of node.children) {
-    layout(doc, child);
+    layout(doc, child as ValidShape);
   }
 
   if (isText(node)) {
@@ -256,6 +257,9 @@ export const layout = (doc: PDFKit.PDFDocument, node: ValidShape) => {
       .stroke(node.borderColor);
   }
 };
+
+// Alias for backward compatibility with tests
+export const draw = layout;
 
 // Re-export FlexBox types and class
 export { FlexBox } from "./flexbox";
