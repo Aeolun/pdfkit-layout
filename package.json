@@ -1,17 +1,35 @@
 {
   "name": "pdfkit-layout",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A flexbox-style layout system for PDFKit with support for Box, FlexBox, Image, and Text components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepublishOnly": "pnpm build && pnpm test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "pdfkit",
+    "pdf",
+    "layout",
+    "flexbox",
+    "typescript"
+  ],
+  "author": "Bart Riepe <bart@serial-experiments.com>",
   "license": "ISC",
+  "repository": "https://github.com/Aeolun/pdfkit-layout",
+  "bugs": {
+    "url": "https://github.com/Aeolun/pdfkit-layout/issues"
+  },
+  "homepage": "https://github.com/Aeolun/pdfkit-layout#readme",
   "dependencies": {
     "typescript": "^5.5.3"
   },
@@ -19,7 +37,11 @@
     "@biomejs/biome": "^1.8.3",
     "@types/pdfkit": "^0.13.4",
     "@vitest/ui": "^4.0.15",
+    "just-release": "^0.6.0",
     "pdfkit": "^0.15.0",
     "vitest": "^4.0.15"
+  },
+  "peerDependencies": {
+    "pdfkit": "^0.15.0"
   }
 }
